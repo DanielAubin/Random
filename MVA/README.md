@@ -25,7 +25,7 @@ Example : Plot of the PDF of binomial distribution.
 
 ```
 
-![Picture1](MSMpdfbinomial.png)
+![Picture1](MSMpdfBinomial.pdf)
 
 
 ### R Code:
