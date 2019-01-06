@@ -29,21 +29,49 @@ Submitted : Mon, January 1 2019 by xx
 ### R Code:
 ```r
 
-# clear history
-rm(list = ls(all = TRUE))
-graphics.off()
 
-# Plot the PDF
-y1 = dbinom(0:20, 20, 0.1)
-y2 = dbinom(0:20, 20, 0.5)
-y3 = dbinom(0:20, 20, 0.8)
+adf_simulation <- function(n=1000,mean=0,sigma=1,alpha=alpha.,beta=beta.,lag=lag.,sim=1000){
+  out <- matrix(NA,sim,1)
+  output <- matrix(NA,4,4)
+for(a in 1:2){
 
-plot(y1, col = "blue", type = "h", lwd = 2.5, ylab = "", xlab = "")
-points(y1, col = "blue", type = "p", pch = 20, lwd = 0.1, ylim = c(0, 0.3))
-lines(y2, col = "darkolivegreen4", type = "h", lwd = 2.5, ylab = "", xlab = "")
-points(y2, col = "darkolivegreen4", type = "p", pch = 20, lwd = 0.1, ylim = c(0, 
-    0.3))
-lines(y3, col = "chocolate4", type = "h", lwd = 2.5, ylab = "", xlab = "")
-points(y3, col = "chocolate4", type = "p", pch = 20, lwd = 0.1, ylim = c(0, 0.3)) 
+for(b in 1:4) {
+  
+      for(p in 1:2) {
+        
+        for(M in 1:sim) {
+          
+    xi<-rnorm(1000, mean=0, sd=1)
+    eps<-c()
+    for (i in 2:length(xi)) {
+      eps[i]<-xi[i] + beta[b] * xi[i-1]
+    }
+    X<-c()
+    X[1]<-0
+    for (i in 2:length(eps)){
+      X[i] <- alpha[a]*X[i-1] + eps[i]
+    }
+        out[M,1] <- adf.test(X,k=lag[p])$p.value
+        
+        if(a==1) {
+        output[p,b] <- sum(out[,1]<=0.05)/sim
+        } else {output[p+2,b] <- sum(out[,1]<=0.05)/sim}
+        }
+        
+  }
+  
+}
+}
+return(output)
+}
+
+
+alpha. <- c(1,0.95)
+beta. <- c(-0.99,-0.90,0,0.90)
+lag. <- c(3,11)
+sim <- 1000
+
+table44 <- adf_simulation(sim=10000)
+table44 
 
 ```
