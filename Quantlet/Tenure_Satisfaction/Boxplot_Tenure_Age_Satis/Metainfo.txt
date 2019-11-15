@@ -1,11 +1,11 @@
 
-Name of Quantlet: 'Correlation_Plot'
+Name of Quantlet: 'Boxplot'
 
-Published in: 'Group Average Treatment Effects for Observational Studies'
+Published in: 'Does Tenure make you love your Job'
 
-Description: 'Plots the correlation between variables including the density and pearson correlation coefficient'
+Description: 'This Boxplot plots the dependence between tenure status and the degree of satisfaction with intellectual challenge by different age groups. We also plot the arithmetic mean as a additional measurement. '
 
-Keywords: 'correlation, density, pearson'
+Keywords: 'correlation, tenure, age group, satisfaction, boxplot'
 
 Author: 'Daniel Jacob'
 
@@ -15,6 +15,6 @@ Submitted:  ''
 
 Datafile: ''
 
-Input: 'dataset or DGP'
+Input: 'dataset'
 
-Output:  'correlation between variables'
+Output:  'multiple boxplots in one graph'
