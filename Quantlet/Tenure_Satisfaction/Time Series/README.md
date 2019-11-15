@@ -8,4 +8,4 @@ It also includes the amount of doctorate holders over time.
 
 
 
-![Picture1](Time_Series_Tenure_PhD.pdf)
+![Picture1](Tenure_Phd_Time_Series.png)
