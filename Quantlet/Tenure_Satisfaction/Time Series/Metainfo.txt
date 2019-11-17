@@ -1,4 +1,4 @@
-Name of Quantlet: 'Time_Series_Tenure_PhD'
+Name of Quantlet: 'Ten_Sat_Time_Series_Tenure_PhD'
 
 Published in: 'Does Tenure make you love your Job?'
 
