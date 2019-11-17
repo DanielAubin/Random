@@ -1,5 +1,5 @@
 
-Name of Quantlet: 'Boxplot'
+Name of Quantlet: 'Ten_Sat_Boxplot'
 
 Published in: 'Does Tenure make you love your Job'
 
